@@ -36,15 +36,23 @@ resources:
 # add PROD resources for Joyent Triton
 
 # PROD env - TRITON CLUSTER
-  - name: env-prod-triton
+#  - name: env-prod-triton
+##    type: cluster
+#    integration: demo-manishas
+#    version:
+#      region: "us-east-1"
+
+  - name: env-prod-gke
     type: cluster
-    integration: ttrahan-tpc
-    version:
-      region: "us-east-1"
+    integration: demo-manishas-gke
+    pointer:
+      sourceName: "demo-shippable-gke" #name of the cluster we are deploying.
+      region: "us-central1-b"
+
 
 # PROD env vars for BOX
-  - name: box-p-tpc-params
+  - name: box-gke-params
     type: params
     version:
       params:
-        ENVIRONMENT: "prod-triton"
+        ENVIRONMENT: "prod-gke"
