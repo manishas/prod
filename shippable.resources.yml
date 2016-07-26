@@ -51,7 +51,7 @@ resources:
 
 
 # PROD env vars for BOX
-  - name: box-gke-params
+  - name: box-p-gke-params
     type: params
     version:
       params:
