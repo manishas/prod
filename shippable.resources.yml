@@ -8,7 +8,7 @@ resources:
   - name: box-p-ecs-scaler
     type: replicas
     version:
-      count: 2
+      count: 1
 
  #PROD env vars for BOX
   - name: box-p-ecs-params
