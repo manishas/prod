@@ -2,6 +2,7 @@ jobs:
 
 # jobs for the box demo pipelines for PROD environment
 
+#####3: Add prod for BOX
 # PROD deployment - Amazon ECS
   - name: box-prod-ecs
     type: ecsDeploy
@@ -13,9 +14,12 @@ jobs:
       - IN: env-prod-ecs
       - TASK: managed
 
+#####3: End Add prod for BOX
 
-# #PROD deployment - Google Container Engine
-#   - name: box-prod-gke
+#####4: Add DR for BOX
+
+# #DR deployment - Google Container Engine
+#   - name: box-dr-gke
 #     type: gkeDeploy
 #     steps:
 #       - IN: box-test-aws-ecs
@@ -24,3 +28,5 @@ jobs:
 #       - IN: box-p-gke-params
 #       - IN: dr-demo-gke
 #       - TASK: managed
+
+#####4: Add DR for BOX
