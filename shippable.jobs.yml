@@ -8,25 +8,25 @@ jobs:
 
 # BOX JOBS
 
-# PROD deployment - Amazon ECS
-  - name: box-prod-ecs
-    type: ecsDeploy
-    steps:
-      - IN: box-test-aws-ecs
-        trigger: false
-      - IN: box-p-ecs-scaler
-      - IN: box-p-ecs-params
-      - IN: env-prod-ecs
-      - TASK: managed
+# # PROD deployment - Amazon ECS
+#   - name: box-prod-ecs
+#     type: ecsDeploy
+#     steps:
+#       - IN: box-test-aws-ecs
+#         trigger: false
+#       - IN: box-p-ecs-scaler
+#       - IN: box-p-ecs-params
+#       - IN: env-prod-ecs
+#       - TASK: managed
 
 
-#PROD deployment - Google Container Engine
-  - name: box-prod-gke
-    type: gkeDeploy
-    steps:
-      - IN: box-test-aws-ecs
-        trigger: false
-      - IN: box-p-gke-scaler
-      - IN: box-p-gke-params
-      - IN: env-prod-gke
-      - TASK: managed
+# #PROD deployment - Google Container Engine
+#   - name: box-prod-gke
+#     type: gkeDeploy
+#     steps:
+#       - IN: box-test-aws-ecs
+#         trigger: false
+#       - IN: box-p-gke-scaler
+#       - IN: box-p-gke-params
+#       - IN: env-prod-gke
+#       - TASK: managed

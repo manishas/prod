@@ -7,57 +7,44 @@ resources:
 # shared resources across environmnents
 
 # PROD replica controller for BOX
-  - name: box-p-ecs-scaler
-    type: replicas
-    version:
-      count: 2
+#   - name: box-p-ecs-scaler
+#     type: replicas
+#     version:
+#       count: 2
 
-  - name: box-p-gke-scaler
-    type: replicas
-    version:
-      count: 2
+#   - name: box-p-gke-scaler
+#     type: replicas
+#     version:
+#       count: 2
 
-# add PROD resources for Amazon ECS
+# # add PROD resources for Amazon ECS
 
-# DR env - AWS cluster
-  - name: env-prod-ecs
-    type: cluster
-    integration: demo-manishas-ecs
-    pointer:
-      sourceName: "demo-shippable-ecs"
-      region: "us-east-1"
+# # DR env - AWS cluster
+#   - name: env-prod-ecs
+#     type: cluster
+#     integration: demo-manishas-ecs
+#     pointer:
+#       sourceName: "demo-shippable-ecs"
+#       region: "us-east-1"
 
- #DR env vars for BOX
-  - name: box-p-ecs-params
-    type: params
-    version:
-      params:
-        ENVIRONMENT: "prod-ecs"
+#  #DR env vars for BOX
+#   - name: box-p-ecs-params
+#     type: params
+#     version:
+#       params:
+#         ENVIRONMENT: "prod-ecs"
 
-################################
-
-# BOX RESOURCES - Triton
-
-# add PROD resources for Joyent Triton
-
-# PROD env - TRITON CLUSTER
-#  - name: env-prod-triton
-##    type: cluster
-#    integration: demo-manishas
-#    version:
-#      region: "us-east-1"
-
-  - name: env-prod-gke
-    type: cluster
-    integration: demo-manishas-gke
-    pointer:
-      sourceName: "demo-shippable-gke" #name of the cluster we are deploying.
-      region: "us-central1-b"
+#   - name: env-prod-gke
+#     type: cluster
+#     integration: demo-manishas-gke
+#     pointer:
+#       sourceName: "demo-shippable-gke" #name of the cluster we are deploying.
+#       region: "us-central1-b"
 
 
-# PROD env vars for BOX
-  - name: box-p-gke-params
-    type: params
-    version:
-      params:
-        ENVIRONMENT: "prod-gke"
+# # PROD env vars for BOX
+#   - name: box-p-gke-params
+#     type: params
+#     version:
+#       params:
+#         ENVIRONMENT: "prod-gke"
