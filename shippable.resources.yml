@@ -2,45 +2,33 @@ resources:
 
 # resources for the box demo pipelines for PROD environment
 
-################################
-
-# shared resources across environmnents
-
 # PROD replica controller for BOX
-#   - name: box-p-ecs-scaler
-#     type: replicas
-#     version:
-#       count: 2
+  - name: box-p-ecs-scaler
+    type: replicas
+    version:
+      count: 2
+
+ #PROD env vars for BOX
+  - name: box-p-ecs-params
+    type: params
+    version:
+      params:
+        ENVIRONMENT: "prod-ecs"
+
+# PROD env - AWS cluster
+  - name: env-prod-ecs
+    type: cluster
+    integration: demo-manishas-ecs
+    pointer:
+      sourceName: "demo-shippable-ecs"
+      region: "us-east-1"
+
+# #resources for the box demo pipelines for DR environment
 
 #   - name: box-p-gke-scaler
 #     type: replicas
 #     version:
 #       count: 2
-
-# # add PROD resources for Amazon ECS
-
-# # DR env - AWS cluster
-#   - name: env-prod-ecs
-#     type: cluster
-#     integration: demo-manishas-ecs
-#     pointer:
-#       sourceName: "demo-shippable-ecs"
-#       region: "us-east-1"
-
-#  #DR env vars for BOX
-#   - name: box-p-ecs-params
-#     type: params
-#     version:
-#       params:
-#         ENVIRONMENT: "prod-ecs"
-
-#   - name: env-prod-gke
-#     type: cluster
-#     integration: demo-manishas-gke
-#     pointer:
-#       sourceName: "demo-shippable-gke" #name of the cluster we are deploying.
-#       region: "us-central1-b"
-
 
 # # PROD env vars for BOX
 #   - name: box-p-gke-params
@@ -48,3 +36,12 @@ resources:
 #     version:
 #       params:
 #         ENVIRONMENT: "prod-gke"
+
+# # DR env - GKE cluster
+#   - name: dr-demo-gke
+#     type: cluster
+#     integration: demo-manishas-gke
+#     pointer:
+#       sourceName: "demo-shippable-gke" #name of the cluster we are deploying.
+#       region: "us-central1-b"
+
