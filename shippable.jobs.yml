@@ -18,15 +18,15 @@ jobs:
 
 #####4: Add DR for BOX
 
-# #DR deployment - Google Container Engine
-#   - name: box-dr-gke
-#     type: gkeDeploy
-#     steps:
-#       - IN: box-test-aws-ecs
-#         trigger: false
-#       - IN: box-p-gke-scaler
-#       - IN: box-p-gke-params
-#       - IN: dr-demo-gke
-#       - TASK: managed
+#DR deployment - Google Container Engine
+  - name: box-dr-gke
+    type: gkeDeploy
+    steps:
+      - IN: box-test-aws-ecs
+        trigger: false
+      - IN: box-p-gke-scaler
+      - IN: box-p-gke-params
+      - IN: dr-demo-gke
+      - TASK: managed
 
 #####4: Add DR for BOX
