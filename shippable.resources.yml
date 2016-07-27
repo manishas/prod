@@ -15,19 +15,19 @@ resources:
 # add PROD resources for Amazon ECS
 
 # DR env - AWS cluster
-   - name: env-prod-ecs
-     type: cluster
-     integration: demo-manishas-ecs
-     pointer:
-       sourceName: "demo-shippable-ecs"
-       region: "us-east-1"
+  - name: env-prod-ecs
+    type: cluster
+    integration: demo-manishas-ecs
+    pointer:
+      sourceName: "demo-shippable-ecs"
+      region: "us-east-1"
 
  #DR env vars for BOX
-   - name: box-p-ecs-params
-     type: params
-     version:
-       params:
-         ENVIRONMENT: "prod-ecs"
+  - name: box-p-ecs-params
+    type: params
+    version:
+      params:
+        ENVIRONMENT: "prod-ecs"
 
 ################################
 
