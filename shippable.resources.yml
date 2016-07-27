@@ -41,7 +41,7 @@ resources:
     type: params
     version:
       params:
-        ENVIRONMENT: "prod-gke"
+        ENVIRONMENT: "dr-gke"
 
 # DR env - GKE cluster
   - name: dr-demo-gke
