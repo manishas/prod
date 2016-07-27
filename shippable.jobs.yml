@@ -2,16 +2,16 @@ jobs:
 
 # jobs for the box demo pipelines for PROD environment
 
-# # PROD deployment - Amazon ECS
-#   - name: box-prod-ecs
-#     type: ecsDeploy
-#     steps:
-#       - IN: box-test-aws-ecs
-#         trigger: false
-#       - IN: box-p-ecs-scaler
-#       - IN: box-p-ecs-params
-#       - IN: env-prod-ecs
-#       - TASK: managed
+# PROD deployment - Amazon ECS
+  - name: box-prod-ecs
+    type: ecsDeploy
+    steps:
+      - IN: box-test-aws-ecs
+        trigger: false
+      - IN: box-p-ecs-scaler
+      - IN: box-p-ecs-params
+      - IN: env-prod-ecs
+      - TASK: managed
 
 
 # #PROD deployment - Google Container Engine
