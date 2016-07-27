@@ -4,52 +4,52 @@ resources:
 
 #####3: Add prod for BOX
 
-# # PROD replica controller for BOX
-#   - name: box-p-ecs-scaler
-#     type: replicas
-#     version:
-#       count: 1
+# PROD replica controller for BOX
+  - name: box-p-ecs-scaler
+    type: replicas
+    version:
+      count: 1
 
-#  #PROD env vars for BOX
-#   - name: box-p-ecs-params
-#     type: params
-#     version:
-#       params:
-#         ENVIRONMENT: "prod-ecs"
+ #PROD env vars for BOX
+  - name: box-p-ecs-params
+    type: params
+    version:
+      params:
+        ENVIRONMENT: "prod-ecs"
 
-# # PROD env - AWS cluster
-#   - name: env-prod-ecs
-#     type: cluster
-#     integration: demo-manishas-ecs
-#     pointer:
-#       sourceName: "demo-shippable-ecs"
-#       region: "us-east-1"
+# PROD env - AWS cluster
+  - name: env-prod-ecs
+    type: cluster
+    integration: demo-manishas-ecs
+    pointer:
+      sourceName: "demo-shippable-ecs"
+      region: "us-east-1"
 
-#####3: End Add prod for BOX
+####3: End Add prod for BOX
 
-# #resources for the box demo pipelines for DR environment
+#resources for the box demo pipelines for DR environment
 
-# #####4: Add DR for BOX
+#####4: Add DR for BOX
 
-#   - name: box-p-gke-scaler
-#     type: replicas
-#     version:
-#       count: 1
+  - name: box-p-gke-scaler
+    type: replicas
+    version:
+      count: 1
 
-# # PROD env vars for BOX
-#   - name: box-p-gke-params
-#     type: params
-#     version:
-#       params:
-#         ENVIRONMENT: "dr-gke"
+# PROD env vars for BOX
+  - name: box-p-gke-params
+    type: params
+    version:
+      params:
+        ENVIRONMENT: "dr-gke"
 
-# # DR env - GKE cluster
-#   - name: dr-demo-gke
-#     type: cluster
-#     integration: demo-manishas-gke
-#     pointer:
-#       sourceName: "dr-demo-gke" #name of the cluster we are deploying.
-#       region: "us-central1-b"
+# DR env - GKE cluster
+  - name: dr-demo-gke
+    type: cluster
+    integration: demo-manishas-gke
+    pointer:
+      sourceName: "dr-demo-gke" #name of the cluster we are deploying.
+      region: "us-central1-b"
 
 #####4: End Add DR for BOX
   
