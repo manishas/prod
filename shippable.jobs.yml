@@ -24,7 +24,7 @@ jobs:
   - name: box-prod-gke
     type: gkeDeploy
     steps:
-      - IN: box-test-gke
+      - IN: box-test-aws-ecs
         trigger: false
       - IN: box-p-scaler
       - IN: box-p-gke-params
