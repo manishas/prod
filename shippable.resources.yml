@@ -10,7 +10,7 @@ resources:
   - name: box-p-ecs-scaler
     type: replicas
     version:
-      count: 1
+      count: 2
 
   - name: box-p-gke-scaler
     type: replicas
