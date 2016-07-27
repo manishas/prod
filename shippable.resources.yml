@@ -27,29 +27,31 @@ resources:
 
 ####3: End Add prod for BOX
 
-#resources for the box demo pipelines for DR environment
+
+
+
 
 #####4: Add DR for BOX
 
-#   - name: box-p-gke-scaler
-#     type: replicas
-#     version:
-#       count: 1
+  - name: box-p-gke-scaler
+    type: replicas
+    version:
+      count: 1
 
-# # PROD env vars for BOX
-#   - name: box-p-gke-params
-#     type: params
-#     version:
-#       params:
-#         ENVIRONMENT: "dr-gke"
+# PROD env vars for BOX
+  - name: box-p-gke-params
+    type: params
+    version:
+      params:
+        ENVIRONMENT: "dr-gke"
 
-# # DR env - GKE cluster
-#   - name: dr-demo-gke
-#     type: cluster
-#     integration: demo-manishas-gke
-#     pointer:
-#       sourceName: "dr-demo-gke" #name of the cluster we are deploying.
-#       region: "us-central1-b"
+# DR env - GKE cluster
+  - name: dr-demo-gke
+    type: cluster
+    integration: demo-manishas-gke
+    pointer:
+      sourceName: "dr-demo-gke" #name of the cluster we are deploying.
+      region: "us-central1-b"
 
 #####4: End Add DR for BOX
   
