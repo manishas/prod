@@ -20,14 +20,13 @@ jobs:
       - TASK: managed
 
 
-# PROD deployment - Google Container Engine
-   # - name: box-prod-gke
-   #   type: gkeDeploy
-   #   steps:
-   #     - IN: box-test-gke
-   #       trigger: false
-   #     - IN: box-p-scaler
-   #     - IN: box-p-gke-params
-   #     - IN: env-prod-gke
-   #     - IN: trigger-prod-deploy-box
-   #     - TASK: managed
+#PROD deployment - Google Container Engine
+  - name: box-prod-gke
+    type: gkeDeploy
+    steps:
+      - IN: box-test-gke
+        trigger: false
+      - IN: box-p-scaler
+      - IN: box-p-gke-params
+      - IN: env-prod-gke
+      - TASK: managed
