@@ -10,7 +10,7 @@ resources:
   - name: box-p-scaler
     type: replicas
     version:
-      count: 1
+      count: 2
 
 # add PROD resources for Amazon ECS
 
