@@ -7,7 +7,12 @@ resources:
 # shared resources across environmnents
 
 # PROD replica controller for BOX
-  - name: box-p-scaler
+  - name: box-p-ecs-scaler
+    type: replicas
+    version:
+      count: 1
+
+  - name: box-p-gke-scaler
     type: replicas
     version:
       count: 2
