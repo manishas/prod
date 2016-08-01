@@ -5,7 +5,7 @@ jobs:
 ###3: Add prod for BOX
 # PROD deployment - Amazon ECS
   - name: box-prod-ecs
-    type: ecsDeploy
+    type: deploy
     steps:
       - IN: box-test-aws-ecs
         trigger: false
@@ -24,7 +24,7 @@ jobs:
 
 #DR deployment - Google Container Engine
   - name: box-dr-gke
-    type: gkeDeploy
+    type: deploy
     steps:
       - IN: box-test-aws-ecs
         trigger: false
